@@ -6,7 +6,7 @@ const port = 50000;
 //request callBack 방식
 
 app.get('/', (req, res) => {
-    res.send("Hello World!");
+    res.send("지훈아 안녕?!?!?!?");
 })
 
 app.listen(port, () => {
