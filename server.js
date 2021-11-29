@@ -5,7 +5,7 @@ const port = 50000;
 
 //request callBack 방식
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send("Connected");
 })
 
