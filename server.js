@@ -19,8 +19,8 @@ app.post('/test', (req, res) => {
         "resultCode": "OK",
         "output": {
             DEF_LOC: "안성",
-            DEF_ADD: "위치",
-            DEF_NUM: "번호",
+            DEF_API_ADD: "위치",
+            DEF_API_NUM: "번호",
         }
     }
 
