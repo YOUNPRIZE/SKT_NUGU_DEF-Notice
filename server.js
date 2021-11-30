@@ -16,7 +16,7 @@ app.post('/', (req, res) => {
 
 app.post('/test', (req, res) => {
     console.log(req.body.action.parameters);
-    
+    console.log(req.body)
     const response = {
         "version": "2.0",
         "resultCode": "OK",
