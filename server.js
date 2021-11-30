@@ -10,6 +10,11 @@ app.post('/', (req, res) => {
     res.send("Connected");
 })
 
+app.post('/test', (req, res) => {
+    console.log(req);
+    res.send(res);
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 })
