@@ -17,6 +17,15 @@ app.post('/', (req, res) => {
 app.post('/test', (req, res) => {
     console.log(req.body.action.parameters);
     console.log(req.body)
+
+
+    req.body.resultCode = "OK";
+    req.body.output = {
+        DEF_LOC: "안성",
+        DEF_API_ADD: "위치",
+        DEF_API_NUM: "번호",
+    }
+    /*
     const response = {
         "version": "2.0",
         "resultCode": "OK",
@@ -26,8 +35,9 @@ app.post('/test', (req, res) => {
             DEF_API_NUM: "번호",
         }
     }
+    */
 
-    res.send(response);
+    res.send(req.body);
     res.end;
 })
 
