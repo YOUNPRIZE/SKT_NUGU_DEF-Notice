@@ -7,12 +7,12 @@ const bodyParser = require('body-parser')
 
 app.use(bodyParser.json())
 
-/*
+
 app.post('/', (req, res) => {
     console.log(req.body);
     res.send("Connected");
 })
-*/
+
 
 app.post('/test', (req, res) => {
     const response = {
