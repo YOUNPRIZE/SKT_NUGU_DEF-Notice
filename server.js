@@ -21,7 +21,7 @@ app.post('/test', (req, res) => {
 
     req.body.resultCode = "OK";
     req.body.output = {
-        DEF_LOC: "안성",
+        DEF_LOC: req.body.action.parameters.DEF_LOC.value,
         DEF_API_ADD: "위치",
         DEF_API_NUM: "번호",
     }
