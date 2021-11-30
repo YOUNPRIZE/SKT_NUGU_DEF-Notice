@@ -8,6 +8,7 @@ var logger = require('morgan');
 //var usersRouter = require('./routes/users');
 var app = express();
 
+/*
 // INA
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+*/
 
 app.post('/', function(req, res){
         console.log(req.body);
