@@ -33,7 +33,7 @@ app.post('/', function(req, res){
         res.send("Connected");
 });
 
-app.post('/test2', function(req,res){
+app.post('/test', function(req,res){
         var obj = req.body;
 
         console.log(obj);
