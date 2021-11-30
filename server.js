@@ -14,16 +14,17 @@ app.post('/', (req, res) => {
 
 
 app.post('/test', (req, res) => {
-    const object = req.body;
-    console.log(object);
+    const response = {
+        "version": "2.0",
+        "resultCode": "OK",
+        "output": {
+            DEF_LOC: "안성",
+            DEF_ADD: "위치",
+            DEF_NUM: "번호",
+        }
+    }
 
-    console.log("Parameters");
-    console.log(object.action.parameters);
-
-    obj.output = {"response" : "방가워요!!!!"}; 
-    obj.resultCode ="OK";  
-
-    res.send(obj);
+    res.send(response);
     res.end;
 })
 
