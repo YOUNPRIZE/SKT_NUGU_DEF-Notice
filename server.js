@@ -12,12 +12,21 @@ app.post('/', (req, res) => {
     res.send("Connected");
 })
 
-/*
+
 app.post('/test', (req, res) => {
-    console.log(req.body);
-    res.send(res);
+    const object = req.body;
+    console.log(object);
+
+    console.log("Parameters");
+    console.log(object.action.parameters);
+
+    obj.output = {"response" : "방가워요!!!!"}; 
+    obj.resultCode ="OK";  
+
+    res.send(obj);
+    res.end;
 })
-*/
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
