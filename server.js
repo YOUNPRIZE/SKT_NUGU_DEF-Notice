@@ -15,8 +15,8 @@ app.post('/', (req, res) => {
 
 
 app.post('/test', (req, res) => {
-    console.log(req.body.action.parameters);
-    console.log(req.body)
+    console.log(req.body.action.parameters.DEF_LOC.value);
+    //console.log(req.body)
 
 
     req.body.resultCode = "OK";
@@ -25,6 +25,7 @@ app.post('/test', (req, res) => {
         DEF_API_ADD: "위치",
         DEF_API_NUM: "번호",
     }
+
     /*
     const response = {
         "version": "2.0",
