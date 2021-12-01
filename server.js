@@ -40,10 +40,10 @@ app.post('/test', (req, res) => {
                 }
                 return null;
             });
-            console.log(extractAdd[0].주소)
+            //console.log(extractAdd[0].주소)
         });
         };
-    result()
+    console.log(result())
     req.body.resultCode = "OK";
     req.body.output = {
         DEF_LOC: req.body.action.parameters.DEF_LOC.value,
