@@ -57,7 +57,7 @@ app.post('/test', (nuguReq, nuguRes) => {
         nuguReq.body.output = {
             DEF_LOC: nuguReq.body.action.parameters.DEF_LOC.value,
             DEF_API_ADD: /*"위치"*/extractAdd[0].주소,
-            DEF_API_NUM: /*"번호"*/extractAdd[0].번호
+            DEF_API_NUM: /*"번호"*/extractAdd[0].전화번호
         }
         nuguRes.send(nuguReq.body)
     })
