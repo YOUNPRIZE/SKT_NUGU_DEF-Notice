@@ -31,20 +31,19 @@ app.post('/test', (req, res) => {
     const result = async function () {
         const result2 = await getData()
         .then(function(response) {
-            res.send(response);
+            //res.send(response);
             const extract = response.data;
             const extract_data = _.filter(extract, function (o) {return o.재고량 > 0});
-            //console.log(extract_data)
             const extractAdd = extract_data.filter(object => {
                 if (object.주소.indexOf(req.body.action.parameters.DEF_LOC.value) > -1) {
                     return object;
                 }
                 return null;
             });
-            //console.log(extractAdd)
+            console.log(extractAdd[0].주소)
         });
         };
-    console.log(result());
+    result()
     req.body.resultCode = "OK";
     req.body.output = {
         DEF_LOC: req.body.action.parameters.DEF_LOC.value,
