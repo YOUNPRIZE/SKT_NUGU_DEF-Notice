@@ -41,9 +41,11 @@ app.post('/test', (req, res) => {
                 return null;
             });
             //console.log(extractAdd[0].주소)
+            return extractAdd
+            console.log(extractAdd)
         });
         };
-    console.log(result())
+    result()
     req.body.resultCode = "OK";
     req.body.output = {
         DEF_LOC: req.body.action.parameters.DEF_LOC.value,
