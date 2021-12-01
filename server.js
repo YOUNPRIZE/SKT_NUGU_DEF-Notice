@@ -20,33 +20,13 @@ const getData = function() {
     // getData는 new Promise를 return한다.
     return new Promise(function(resolve) {
         //axios.get 자체도 Promise 함수이기 때문에 .then을 사용하는 것 같음.
-        axios.post(url)
+        axios.get(url)
         .then(function(response) {
             resolve(response.data);
         });
     });
 }
-/*
-app.post('/defAPI', (req, res) => {
-    const result = async function () {
-        const result2 = await getData()
-        .then(function(response) {
-            res.send(response);
-            const extract = response.data
-            const extract_data = _.filter(extract, function (o) {return o.재고량 > 0});
-            //console.log(extract_data)
-            const extractAdd = extract_data.filter(object => {
-                if (object.주소.indexOf(req.body.action.parameters.DEF_LOC.value) > -1) {
-                    return object;
-                }
-                return null;
-            });
-            console.log(extractAdd)
-        });
-        }
-    result()
-})
-*/
+
 app.post('/test', (req, res) => {
     const result = async function () {
         const result2 = await getData()
@@ -71,19 +51,6 @@ app.post('/test', (req, res) => {
         DEF_API_ADD: /*"위치"*/extractAdd[0].주소,
         DEF_API_NUM: /*"번호"*/extractAdd[0].번호
     }
-
-    /*
-    const response = {
-        "version": "2.0",
-        "resultCode": "OK",
-        "output": {
-            DEF_LOC: "안성",
-            DEF_API_ADD: "위치",
-            DEF_API_NUM: "번호",
-        }
-    }
-    */
-
     res.send(req.body);
     res.end;
 })
