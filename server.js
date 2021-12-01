@@ -47,6 +47,7 @@ app.get('/', (req, res) => {
 // })
 
 app.post('/test', (nuguReq, nuguRes) => {
+    console.log(nuguReq.body)
     axios.get(url)
     .then((apiRes) => {
         const extract = apiRes.data.data;
