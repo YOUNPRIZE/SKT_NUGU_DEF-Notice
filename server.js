@@ -28,34 +28,33 @@ const getData = function() {
 }
 
 app.post('/test', (req, res) => {
-    const result = async function () {
-        const result2 = await getData()
-        .then(function(response) {
-            //res.send(response);
-            const extract = response.data;
-            const extract_data = _.filter(extract, function (o) {return o.재고량 > 0});
-            const extractAdd = extract_data.filter(object => {
-                if (object.주소.indexOf(req.body.action.parameters.DEF_LOC.value) > -1) {
-                    return object;
-                }
-                return null;
-            });
-            //console.log(extractAdd[0].주소)
-            return extractAdd
-            console.log(extractAdd)
-        });
-        };
-    result()
+    getData().then(function(response) {
+        const extract = response.data;
+        const extract_data = _.filter(extract, function (o) {return o.재고량 > 0});
+        const extractAdd = _.filter(extract_data, function (o) {return o.주소.indexOf('안성') > -1});
+        //res.send(extractAdd[0].주소);
+        req.body.resultCode = "OK";
+        req.body.output = {
+            DEF_LOC: req.body.action.parameters.DEF_LOC.value,
+            DEF_API_ADD: "위치"/*result()[0].주소*/,
+            DEF_API_NUM: "번호"/*result()[0].번호*/
+        }
+        res.send(req.body);
+        res.end;
+    })
+})
+
+/*
     req.body.resultCode = "OK";
     req.body.output = {
         DEF_LOC: req.body.action.parameters.DEF_LOC.value,
-        DEF_API_ADD: /*"위치"*/result()[0].주소,
-        DEF_API_NUM: /*"번호"*/result()[0].번호
+        DEF_API_ADD: "위치"/*result()[0].주소*//*,
+        DEF_API_NUM: "번호"/*result()[0].번호*//*
     }
     res.send(req.body);
     res.end;
 })
-
+*/
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
