@@ -49,8 +49,8 @@ app.post('/test', (req, res) => {
     req.body.resultCode = "OK";
     req.body.output = {
         DEF_LOC: req.body.action.parameters.DEF_LOC.value,
-        DEF_API_ADD: "위치"/*result()[0].주소*/,
-        DEF_API_NUM: "번호"/*result()[0].번호*/
+        DEF_API_ADD: /*"위치"*/result()[0].주소,
+        DEF_API_NUM: /*"번호"*/result()[0].번호
     }
     res.send(req.body);
     res.end;
