@@ -32,7 +32,7 @@ app.post('/test', (req, res) => {
         const result2 = await getData()
         .then(function(response) {
             res.send(response);
-            const extract = response.data
+            const extract = response.data;
             const extract_data = _.filter(extract, function (o) {return o.재고량 > 0});
             //console.log(extract_data)
             const extractAdd = extract_data.filter(object => {
@@ -43,12 +43,13 @@ app.post('/test', (req, res) => {
             });
             //console.log(extractAdd)
         });
-        }
+        };
+    console.log(result());
     req.body.resultCode = "OK";
     req.body.output = {
         DEF_LOC: req.body.action.parameters.DEF_LOC.value,
-        DEF_API_ADD: /*"위치"*/result()[0].주소,
-        DEF_API_NUM: /*"번호"*/result()[0].번호
+        DEF_API_ADD: "위치"/*result()[0].주소*/,
+        DEF_API_NUM: "번호"/*result()[0].번호*/
     }
     res.send(req.body);
     res.end;
