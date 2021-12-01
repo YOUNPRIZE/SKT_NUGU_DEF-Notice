@@ -27,25 +27,42 @@ const getData = function() {
     });
 }
 
-console.log(getData())
+// app.post('/test', (req, res) => {
+//     getData().then(function(response) {
+//         console.log(request);
+//         const extract = response.data;
+//         const extract_data = _.filter(extract, function (o) {return o.재고량 > 0});
+//         const extractAdd = _.filter(extract_data, function (o) {return o.주소.indexOf('안성') > -1});
+//         //res.send(extractAdd[0].주소);
+//     })
+    
+//     req.body.resultCode = "OK";
+//     req.body.output = {
+//         DEF_LOC: req.body.action.parameters.DEF_LOC.value,
+//         DEF_API_ADD: "위치"/*result()[0].주소*/,
+//         DEF_API_NUM: "번호"/*result()[0].번호*/
+//     }
+//     res.send(req.body);
+//     res.end;
+// })
+
+
 
 app.post('/test', (req, res) => {
-    getData().then(function(response) {
-        console.log(request);
+    axios.get(url)
+    .then((response) => {
+        console.log(request)
         const extract = response.data;
-        const extract_data = _.filter(extract, function (o) {return o.재고량 > 0});
-        const extractAdd = _.filter(extract_data, function (o) {return o.주소.indexOf('안성') > -1});
-        //res.send(extractAdd[0].주소);
+        const extract_data = _.filter(extract, function (o) {return o.재고량 > 0})
+        const extractAdd = _.filter(extract_data, function (o) {return o.주소.indexOf('안성') > -1})
+        req.body.resultCode = "OK";
+        req.body.output = {
+            DEF_LOC: req.body.action.parameters.DEF_LOC.value,
+            DEF_API_ADD: "위치"/*result()[0].주소*/,
+            DEF_API_NUM: "번호"/*result()[0].번호*/
+        }
+        res.send(req.body)
     })
-    console.log(req.body);
-    req.body.resultCode = "OK";
-    req.body.output = {
-        DEF_LOC: req.body.action.parameters.DEF_LOC.value,
-        DEF_API_ADD: "위치"/*result()[0].주소*/,
-        DEF_API_NUM: "번호"/*result()[0].번호*/
-    }
-    res.send(req.body);
-    res.end;
 })
 
 /*
