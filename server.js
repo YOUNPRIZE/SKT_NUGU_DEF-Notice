@@ -10,7 +10,7 @@ const _ = require('lodash');
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
     res.send("Connected");
 })
 
