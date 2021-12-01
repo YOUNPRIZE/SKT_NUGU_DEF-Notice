@@ -35,6 +35,7 @@ app.post('/test', (req, res) => {
         const extractAdd = _.filter(extract_data, function (o) {return o.주소.indexOf('안성') > -1});
         //res.send(extractAdd[0].주소);
     })
+    console.log(req.body);
     req.body.resultCode = "OK";
     req.body.output = {
         DEF_LOC: req.body.action.parameters.DEF_LOC.value,
