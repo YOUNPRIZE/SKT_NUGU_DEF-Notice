@@ -16,16 +16,16 @@ app.get('/', (req, res) => {
 
 //axios Promise 방식
 
-const getData = function() {
-    // getData는 new Promise를 return한다.
-    return new Promise(function(resolve) {
-        //axios.get 자체도 Promise 함수이기 때문에 .then을 사용하는 것 같음.
-        axios.get(url)
-        .then(function(response) {
-            resolve(response.data);
-        });
-    });
-}
+// const getData = function() {
+//     // getData는 new Promise를 return한다.
+//     return new Promise(function(resolve) {
+//         //axios.get 자체도 Promise 함수이기 때문에 .then을 사용하는 것 같음.
+//         axios.get(url)
+//         .then(function(response) {
+//             resolve(response.data);
+//         });
+//     });
+// }
 
 // app.post('/test', (req, res) => {
 //     getData().then(function(response) {
@@ -45,8 +45,6 @@ const getData = function() {
 //     res.send(req.body);
 //     res.end;
 // })
-
-
 
 app.post('/test', (req, res) => {
     axios.get(url)
