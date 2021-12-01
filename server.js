@@ -29,6 +29,7 @@ const getData = function() {
 
 app.post('/test', (req, res) => {
     getData().then(function(response) {
+        console.log(request);
         const extract = response.data;
         const extract_data = _.filter(extract, function (o) {return o.재고량 > 0});
         const extractAdd = _.filter(extract_data, function (o) {return o.주소.indexOf('안성') > -1});
