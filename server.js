@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
 // })
 
 app.post('/test', (nuguReq, nuguRes) => {
-    console.log(nuguReq.body)
+    //console.log(nuguReq.body)
     axios.get(url)
     .then((apiRes) => {
         const extract = apiRes.data.data;
@@ -56,8 +56,8 @@ app.post('/test', (nuguReq, nuguRes) => {
         nuguReq.body.resultCode = "OK";
         nuguReq.body.output = {
             DEF_LOC: nuguReq.body.action.parameters.DEF_LOC.value,
-            DEF_API_ADD: "위치"/*result()[0].주소*/,
-            DEF_API_NUM: "번호"/*result()[0].번호*/
+            DEF_API_ADD: /*"위치"*/extractAdd[0].주소,
+            DEF_API_NUM: /*"번호"*/extractAdd[0].번호
         }
         nuguRes.send(nuguReq.body)
     })
