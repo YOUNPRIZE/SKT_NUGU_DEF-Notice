@@ -46,19 +46,19 @@ app.get('/', (req, res) => {
 //     res.end;
 // })
 
-app.post('/test', (req, res) => {
+app.post('/test', (nuguReq, nuguRes) => {
     axios.get(url)
-    .then((response) => {
-        const extract = response.data.data;
+    .then((apiRes) => {
+        const extract = apiRes.data.data;
         const extract_data = _.filter(extract, function (o) {return o.재고량 > 0})
         const extractAdd = _.filter(extract_data, function (o) {return o.주소.indexOf('안성') > -1})
-        req.body.resultCode = "OK";
-        req.body.output = {
-            DEF_LOC: req.body.action.parameters.DEF_LOC.value,
+        nuguReq.body.resultCode = "OK";
+        nuguReq.body.output = {
+            DEF_LOC: nuguReq.body.action.parameters.DEF_LOC.value,
             DEF_API_ADD: "위치"/*result()[0].주소*/,
             DEF_API_NUM: "번호"/*result()[0].번호*/
         }
-        res.send(req.body)
+        nuguRes.send(nuguReq.body)
     })
 })
 
