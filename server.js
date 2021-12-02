@@ -22,7 +22,7 @@ app.post('/test', (nuguReq, nuguRes) => {
         console.log(nuguReq.body.action.parameters.DEF_LOC.value)
         const extract = apiRes.data.data;
         const extract_data = _.filter(extract, function (o) {return o.inventory > 0})
-        const extractAdd = _.filter(extract_data, function (o) {return o.주소.indexOf(nuguReq.body.action.parameters.DEF_LOC.value) > -1})
+        const extractAdd = _.filter(extract_data, function (o) {return o.addr.indexOf(nuguReq.body.action.parameters.DEF_LOC.value) > -1})
         nuguReq.body.resultCode = "OK";
         nuguReq.body.output = {
             DEF_LOC: nuguReq.body.action.parameters.DEF_LOC.value,
