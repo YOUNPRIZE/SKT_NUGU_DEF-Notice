@@ -29,7 +29,7 @@ app.post('/test', (nuguReq, nuguRes) => {
             if (error) {
                 console.error(error);
             }
-            console.log(success.latitude);
+            console.log(success.latitude, success.longitude);
             const addInfo = []
             for (let i of extract_data) {
                 i.distancefromcurrentlocation = getDistance(success.latitude, success.longitude, i.lat, i.lng);
@@ -59,6 +59,7 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 })
 
+//동기 함수
 const getDistance = function(lat1,lng1,lat2,lng2) { 
     function deg2rad(deg) { 
         return deg * (Math.PI/180) 
