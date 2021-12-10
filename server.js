@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const axios = require('axios').default;
+const { Navigator } = require("node-navigator");
+const navigator = new Navigator();
 const bodyParser = require('body-parser')
 const _ = require('lodash');
 const port = 50000;
