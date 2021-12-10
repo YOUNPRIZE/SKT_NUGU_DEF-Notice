@@ -31,7 +31,7 @@ app.post('/test', (nuguReq, nuguRes) => {
             }
             console.log(success.latitude);
             const addInfo = []
-            for (let i of JSON.parse(body).data) {
+            for (let i of extract_data) {
                 i.distancefromcurrentlocation = getDistance(success.latitude, success.longitude, i.lat, i.lng);
                 addInfo.push(i);
             };
