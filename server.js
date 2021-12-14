@@ -23,8 +23,6 @@ app.post('/test', (nuguReq, nuguRes) => {
         //요소수 재고량이 0이상인 값만 재추출
         const extract_data = _.filter(extract, function (o) {return o.inventory > 0})
 
-        console.log(extract_data)
-
         //nuguReq.body.action.parameters.DEF_LOC.value => User가 request한 지명만 추출
         const extractAdd = _.filter(extract_data, function (o) {return o.addr.indexOf(nuguReq.body.action.parameters.DEF_LOC.value) > -1})
 
