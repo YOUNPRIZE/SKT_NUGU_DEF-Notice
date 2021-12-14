@@ -27,6 +27,7 @@ app.post('/test', (nuguReq, nuguRes) => {
 
         //nuguReq.body.action.parameters.DEF_LOC.value => User가 request한 지명만 추출
         const extractAdd = _.filter(extract_data, function (o) {return o.addr.indexOf(nuguReq.body.action.parameters.DEF_LOC.value) > -1})
+        print(extractAdd[0])
 
         //필요한 response 값 입력
         nuguReq.body.resultCode = "OK";
