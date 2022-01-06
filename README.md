@@ -6,7 +6,7 @@
 ## Flow
 
 　
-<p align="center"><img src="./png/flow.png" width="700" height="500"></p>
+<p align="center"><img src="./png/flow2.png" width="700" height="500"></p>
 
 ## Description
 > **Structure**
