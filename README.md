@@ -10,9 +10,6 @@
 
 ## Description
 > **Structure**
-> - User의 발화 -> NUGU -> Backend Proxy -> NUGU -> User
->
-> ![main](./png/search.png)
 >
 > 1. User가 '(지명)에 요소수 파는 곳 알려줘' 라고 발화
 > 
