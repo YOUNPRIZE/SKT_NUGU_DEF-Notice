@@ -4,7 +4,7 @@
 ## Outline
 **다양한 OPEN API를 사용할 수 있는 공공데이터포털(https://www.data.go.kr) 에서 주유소의 요소수 재고 현황을 제공해주는 API를 사용해 SKT의 인공지능 스피커인 NUGU를 통해 요소수의 정보를 알려주는 기능입니다.**
 
-자세한 설명 및 코드 리뷰 => [Blog](https://younprize.tistory.com/5)
+자세한 설명 및 코드 리뷰 => <a href="https://younprize.tistory.com/6" target="_blank">YOUNPRIZE's Blog</a>
 ## Flow
 
 　
