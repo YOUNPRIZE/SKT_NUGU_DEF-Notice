@@ -9,7 +9,6 @@
 <p align="center"><img src="./png/flow2.png" width="700" height="500"></p>
 
 ## Description
-> **Structure**
 >
 > 1. User가 '(지명)에 요소수 파는 곳 알려줘' 라고 발화
 > 
@@ -18,3 +17,5 @@
 > 3. Backend Proxy 에서 (지명)에 위치하고 있는 주유소의 정보(주소, 전화번호) 추출
 >
 > 4. NUGU가 "(지명)에 있는 주유소의 전화번호는 (번호), 주소는 (주소)입니다."라는 발화 Output
+>
+> 자세한 내용 및 코드 리뷰 => [Blog](https://younprize.tistory.com/6) 
